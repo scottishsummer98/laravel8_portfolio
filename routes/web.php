@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'PagesController@index')->name('home');
 Route::prefix('admin')->group(function(){
-    Route::get('/dashboard', 'PagesController@dashboard')->name('admin.dashboard');
 
     Route::get('/about', 'AboutPagesController@index')->name('admin.about');
     Route::put('/about', 'AboutPagesController@update')->name('admin.about.update');
@@ -45,8 +44,8 @@ Route::prefix('admin')->group(function(){
 
 Route::post('/contact', 'ContactFormController@store')->name('contact.store');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

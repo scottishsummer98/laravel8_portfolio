@@ -17,7 +17,4 @@ class PagesController extends Controller
         $project = Project::all();
         return view('pages.index', compact('about','experience','education','project'));
     }
-    public function dashboard() {
-        return view('pages.dashboard');
-    }
 }
